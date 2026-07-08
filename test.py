@@ -1,43 +1,43 @@
 import curses
 from curses import wrapper
 import time
+import random
 
-def main(stdscr):
+def rain_test(stdscr):
 
-    # stdscr.nodelay(True)
+    curses.curs_set(0)
+    stdscr.nodelay(True)
 
-    row = 0
-    col = 10
+    # row = 0
+    # col = []
 
-    # height = 25
-    # width = 111
+    # height, width = stdscr.getmaxyx()
 
+    current_row = 0
+    col = []
+    height, width = stdscr.getmaxyx()
+    
+    
+    for i in range(width):
+        col.append(random.randint(-height, -1)) 
 
-
-
-
-
-
-
-
-    # while True:
-
-    #     stdscr.clear()
-    #     #draws a char("a num 1") @ (0,10)
-    #     stdscr.addstr(row, col,"1")
-
-    #     stdscr.refresh()
+    while True:
         
-    #     row += 1
+        stdscr.clear()
 
-    #     height, width = stdscr.getmaxyx()
+        for i, current_row in enumerate(col):
+           
+           if current_row >= 0 and current_row < 0:
+               stdscr.addstr(current_row, i, "1")
+               col[i] += 1
 
-    #     if row > height-1:
-    #         row = 0
-        
+           if col[i] > height-1: 
+                col[i] = 0
 
 
-    #     time.sleep(0.1)
+           
 
+        stdscr.refresh()
+        time.sleep(0.1)
 
-wrapper(main)
+wrapper(rain_test)
