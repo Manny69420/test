@@ -34,7 +34,6 @@ def rain_test(stdscr):
         frame_ctr += 1
 
         for i, current_row in enumerate(col):
-
             
            if current_row >= 0 and current_row < height:
                 
@@ -60,6 +59,6 @@ def rain_test(stdscr):
                 col[i] = random.randint(-height, -1)
 
         stdscr.refresh()
-        time.sleep(0.03)
+        time.sleep(0.02)
 
 wrapper(rain_test)
