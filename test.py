@@ -40,7 +40,6 @@ def rain_test(stdscr):
                 
                 #tells the program to do nothing when numbers are drawn below the height of the terminal 
                 try:
-                    
                     #draws the "head" of each strand
                     stdscr.addstr(current_row, i, random.choice(char), curses.color_pair(1))
 
@@ -61,6 +60,6 @@ def rain_test(stdscr):
                 col[i] = random.randint(-height, -1)
 
         stdscr.refresh()
-        time.sleep(0.1)
+        time.sleep(0.03)
 
 wrapper(rain_test)
