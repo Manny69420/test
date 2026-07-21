@@ -59,6 +59,6 @@ def rain_test(stdscr):
                 col[i] = random.randint(-height, -1)
 
         stdscr.refresh()
-        time.sleep(0.02)
+        time.sleep(0.01)
 
 wrapper(rain_test)
